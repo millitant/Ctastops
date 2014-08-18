@@ -1,11 +1,11 @@
-$.getJSON('http://data.cityofchicago.org/resource/8pix-ypme.json', function(busstops){  
+$.getJSON('http://data.cityofchicago.org/resource/mw4h-s8xu.json', function(busstops){  
   $('#lstoplist').empty();
   
   $.each(lstops, function(i,lstop){
       $('#lstoplist').append(generateLStopLink(lstop));
    });
    
-   $('#stoplist').listview('refresh');
+   $('#lstoplist').listview('refresh');
    
 });
 
