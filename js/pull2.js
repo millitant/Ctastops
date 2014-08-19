@@ -13,10 +13,10 @@ function generateLStopLink(busStop){
 
     return'<li><a href="javascript:void(0)'
            + '"onclick="goToStopDetailPage(\''
-           + lstop.stop_name
+           + busStop.cta_stop_name
            +'\',\''
            + lstop.station_descriptive_name +'\')">'
-           + lstop.stop_name
+           + busStop.cta_stop_name
            + '</a></li>';
 }
 
