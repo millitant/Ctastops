@@ -1,15 +1,15 @@
 $.getJSON('http://data.cityofchicago.org/resource/mw4h-s8xu.json', function(busstops){  
-  $('#lstoplist').empty();
+  $('#busStoplist').empty();
   
-  $.each(lstops, function(i,lstop){
-      $('#lstoplist').append(generateLStopLink(lstop));
+  $.each(lstops, function(i,busStop){
+      $('#busStoplist').append(generateLStopLink(lstop));
    });
    
-   $('#lstoplist').listview('refresh');
+   $('#busStoplist').listview('refresh');
    
 });
 
-function generateLStopLink(lstop){
+function generateLStopLink(busStop){
 
     return'<li><a href="javascript:void(0)'
            + '"onclick="goToStopDetailPage(\''

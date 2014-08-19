@@ -31,5 +31,5 @@ function goToStopDetailPage(stopName){
 stopPage.appendTo( $.mobile.pageContainer );
 
 //go to the newly create page
-$.mobile.changePage( stopPage);
+$.mobile.changePage(stopPage);
 }
