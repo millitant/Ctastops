@@ -1,21 +1,21 @@
 $.getJSON('http://data.cityofchicago.org/resource/mw4h-s8xu.json', function(busstops){  
   $('#busStoplist').empty();
   
-  $.each(lstops, function(i,busStop){
-      $('#busStoplist').append(generateLStopLink(lstop));
+  $.each(busstops, function(i,busStop){
+      $('#busStoplist').append(generateBusStopLink(busStop));
    });
    
    $('#busStoplist').listview('refresh');
    
 });
 
-function generateLStopLink(busStop){
+function generateBusStopLink(busStop){
 
     return'<li><a href="javascript:void(0)'
            + '"onclick="goToStopDetailPage(\''
            + busStop.cta_stop_name
            +'\',\''
-           + lstop.station_descriptive_name +'\')">'
+           + busStop.station_descriptive_name +'\')">'
            + busStop.cta_stop_name
            + '</a></li>';
 }

@@ -1,22 +1,22 @@
 $.getJSON('http://data.cityofchicago.org/resource/mw4h-s8xu.json', function(ctamap){  
-  $('#lstoplist').empty();
+  $('#ctamap').empty();
   
-  $.each(lstops, function(i,lstop){
-      $('#lstoplist').append(generateLStopLink(lstop));
+  $.each(ctamap, function(i,ctaMap){
+      $('#ctamap').append(generateLStopLink(ctamap));
    });
    
-   $('#lstoplist').listview('refresh');
+   $('#ctamap').listview('refresh');
    
 });
 
-function generateLStopLink(lstop){
+function generateCtaMapLink(ctamap){
 
     return'<li><a href="javascript:void(0)'
            + '"onclick="goToStopDetailPage(\''
-           + lstop.stop_name
+           + ctamap.stop_name
            +'\',\''
-           + lstop.station_descriptive_name +'\')">'
-           + lstop.stop_name
+           + ctamap.station_descriptive_name +'\')">'
+           + ctamap.stop_name
            + '</a></li>';
 }
 
