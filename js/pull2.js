@@ -1,26 +1,26 @@
-$.getJSON('http://data.cityofchicago.org/resource/8pix-ypme.json', function(busstops){  
-  $('#busStoplist').empty();
+$.getJSON('js/busstops.json', function(busstops){  
+  $('#busstoplist').empty();
   
-  $.each(busstops, function(i,busStop){
-      $('#busStoplist').append(generateBusStopLink(busStop));
+  $.each(busstops, function(i,busstop){
+      $('#busstoplist').append(generateBusstop(busstop));
    });
    
-   $('#busStoplist').listview('refresh');
+   $('#busstoplist').listview('refresh');
    
 });
 
-function generateBusStopLink(busStop){
+function generateBusstop(busstop){
 
     return'<li><a href="javascript:void(0)'
            + '"onclick="goToStopDetailPage(\''
-           + busStop.cta_stop_name
+           + busstop.stop_name
            +'\',\''
-           + busStop.station_descriptive_name +'\')">'
-           + busStop.cta_stop_name
+           + busstop.stop_descriptive_name +'\')">'
+           + busstop._stop_name
            + '</a></li>';
 }
 
-function goToStopDetailPage(stopName){
+function goToStopDetailPage(busstopName){
 
     //create the page html template
    var stopPage =$("<div data-role='page' data-url=station><div data-role='header'><h1>"
