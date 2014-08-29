@@ -2,7 +2,7 @@ $.getJSON('js/busstops.json', function(busstops){
   $('#busstoplist').empty();
   
   $.each(busstops, function(i,busstop){
-      $('#busstoplist').append(generateBusstopLink(busstop));
+      $('#busstoplist').append(generateLStopLink(busstop));
    });
    
    $('#busstoplist').listview('refresh');
@@ -15,7 +15,7 @@ function generateLStopLink(busstop){
            + '"onclick="goToStopDetailPage(\''
            + busstop.stop_name
            +'\',\''
-           + busstop.stop_desc +'\')">'
+           + busstop.stop_desc_name +'\')">'
            + busstop.stop_name
            + '</a></li>';
 }
